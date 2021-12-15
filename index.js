@@ -5,7 +5,7 @@
  let copy = document.querySelector(".copy");
  
  btn.addEventListener("click", ()=>{
-     const search = " " + "\""; // попробовать тернарное выражение
+     const search = " " + "\""; 
      const replaceWith = ' &laquo';
      let str = " " + '<pre>' + text.value + "</pre>";
      const result = str.replaceAll(search, replaceWith);
@@ -34,7 +34,7 @@
 
 
  copy.addEventListener('click', function() {
-    let copyText = out.textContent || out.innerText;
+    let copyText = out.textContent.trim() || out.innerText.trim();
 if(copyText == '')return
     navigator.clipboard.writeText(copyText);
     copy.setAttribute('value', 'Copied');
