@@ -1,21 +1,22 @@
 body{
-    background: #c1c1c1;
+    background: #dee3ed;
+    padding: 0;
+
+margin: 0;
 }
 
 .text{
-    width: 500px;
-    min-width: 340px;
     max-width: 100%;
-    min-height: 250px;
+    min-height: 450px;
     block-size: fit-content;
     display: block;
     position: relative;
-    padding: 1rem;
+    padding: 1rem 0.5rem;
     margin: 2rem auto;
     background: #ffffff;
 
     border: 1px solid #e7d531;
-
+    font-family: sans-serif;
     outline: none;
 }
 
@@ -23,15 +24,62 @@ body{
     width: fit-content;
     margin: 0 auto;
 
-    margin-top: 40px;
-
+padding-bottom: 3rem;
 }
 
 .block input{
     padding: 20px 40px;
+    margin-top: 1rem;
     text-transform: uppercase;
     font-size: 12px;
     font-weight: 600;
     font-family: sans-serif;
     cursor: pointer;
+    background: transparent;
+    background: #e7d531;
+    border: none;
+    transition: background 0.3s;
+}
+
+.block input:hover{
+    background: #e7d5318f;
+}
+
+.access{
+    color: darkblue;
+    font-family: sans-serif;
+}
+
+@media (min-width: 280px) {
+    .text{
+        width: 250px !important;    
+    }
+
+    .block{
+       display: flex;
+       flex-direction: column;
+    }
+    
+    
+}
+
+@media (min-width: 380px) {
+    .text{
+       min-width: 280px;   
+    }
+    
+}
+
+
+@media (min-width: 576px) {
+    .text{
+       width: 500px !important;
+       min-width: 450px;   
+    }
+    .block{
+        flex-direction: row;
+    }
+    .block input{
+        margin-right: 1rem;}
+    
 }
