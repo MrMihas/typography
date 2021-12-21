@@ -1,8 +1,14 @@
 body{
     background: #dee3ed;
     padding: 0;
+    font-family: sans-serif;
+    margin: 0;
+}
 
-margin: 0;
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .text{
@@ -23,11 +29,11 @@ margin: 0;
 .block{
     width: fit-content;
     margin: 0 auto;
-
-padding-bottom: 3rem;
+    padding-bottom: 3rem;
 }
 
-.block input{
+.block input, 
+.block label{
     padding: 20px 40px;
     margin-top: 1rem;
     text-transform: uppercase;
@@ -46,8 +52,13 @@ padding-bottom: 3rem;
 }
 
 .access{
-    color: darkblue;
+    color: rgb(14, 3, 43);
     font-family: sans-serif;
+}
+
+.access-copy{
+    background: antiquewhite;
+    color: #000;
 }
 
 @media (min-width: 280px) {
