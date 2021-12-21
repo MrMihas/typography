@@ -10,6 +10,7 @@ checkingText.addEventListener('input', ()=>{
     
     btn.removeAttribute('disabled');
     checkingText.classList.remove('access');
+    checkingText.classList.remove('access-copy');
 
 });
 
@@ -17,6 +18,7 @@ checkingText.addEventListener('change', ()=>{
     
     btn.removeAttribute('disabled');
     checkingText.classList.remove('access');
+    checkingText.classList.remove('access-copy');
 
 });
 
@@ -87,7 +89,13 @@ function reverseSymbol2(text) {
     let checkingText = document.querySelector(".text");
     checkingText.value = result.trim();
     checkingText.classList.add('access');
+    // germanLeft(result)
 }
+
+// function lastCheck(text){
+//     germanLeft()
+// }
+
 
 copy.addEventListener('click', function () {
     let copyText = checkingText.value;
@@ -96,7 +104,7 @@ copy.addEventListener('click', function () {
 navigator.clipboard.writeText(copyText);
     copy.setAttribute('value', 'Скопировано');
     copy.setAttribute('disabled', 'true');
-    
+    checkingText.classList.add('access-copy');
     setTimeout(() => {
         copy.setAttribute('value', 'Скопировать');
         copy.removeAttribute('disabled');
@@ -107,6 +115,7 @@ deleteText.addEventListener('click', ()=>{
     checkingText.value = '';
     if(checkingText.value === ''){
         checkingText.classList.remove('access');
+        checkingText.classList.remove('access-copy');
         checkingText.setAttribute('placeholder', 'Введите текст');
     }
 })
