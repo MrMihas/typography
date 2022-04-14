@@ -99,6 +99,7 @@ header{
 	width: 100%;
 	display: flex;
 	justify-content: center;
+	padding: 35px 0;
 }
 
 .hotkey code{
