@@ -119,3 +119,21 @@ deleteText.addEventListener('click', ()=>{
         checkingText.setAttribute('placeholder', 'Введите текст');
     }
 })
+
+
+
+
+// hide on mobile
+
+let hotkey = document.querySelector(".hotkey");
+
+if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
+
+    hotkey.classList.add('hidden');
+
+} else {
+ hotkey.classList.remove('hidden');
+
+}
+
+
