@@ -94,3 +94,13 @@ header{
         margin-right: 1rem;}
     
 }
+
+.hotkey{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+.hotkey code{
+	font-size: 16px;
+}
