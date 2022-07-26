@@ -9,11 +9,16 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
+	text-align: center;
+}
+
+header h1{
+    font-size: 20px;
 }
 
 .text{
     max-width: 100%;
-    min-height: 450px;
+    min-height: 300px;
     block-size: fit-content;
     display: block;
     position: relative;
@@ -26,12 +31,15 @@ header{
     outline: none;
 }
 
-.block{
+.block, .buttons{
     width: fit-content;
     margin: 0 auto;
-    padding-bottom: 3rem;
+    padding-bottom: 20px;
 }
-
+.block{
+    display: flex;
+    flex-direction: column;
+}
 .block input, 
 .block label{
     padding: 20px 40px;
@@ -45,6 +53,7 @@ header{
     background: #e7d531;
     border: none;
     transition: background 0.3s;
+    text-align: center;
 }
 
 .block input:hover{
@@ -66,11 +75,11 @@ header{
         width: 250px !important;    
     }
 
-    .block{
-       display: flex;
-       flex-direction: column;
+
+    .buttons{
+        display: flex;
+        flex-direction: column;
     }
-    
     
 }
 
@@ -87,7 +96,7 @@ header{
        width: 500px !important;
        min-width: 450px;   
     }
-    .block{
+    .buttons{
         flex-direction: row;
     }
     .block input{
@@ -95,13 +104,183 @@ header{
     
 }
 
+.keys{
+    overflow: hidden;
+   height: 0;
+    
+}
+
+
+.keys.hide{
+     animation: hide 0.5s  forwards  ease-in-out ;
+  
+}
+@keyframes hide{
+    from{
+
+        height: 100px;
+    }
+
+    to{
+        height: 0;
+    }
+}
+
+
+.keys.active{
+    animation: show 0.5s  forwards  ease-in-out ;
+}
+
+@keyframes show{
+    from{
+        height: 0;
+    }
+
+    to{
+        height: 100px;
+    }
+}
+
 .hotkey{
 	width: 100%;
 	display: flex;
+	flex-direction: column;
+	align-items: center;
 	justify-content: center;
-	padding: 35px 0;
+	padding: 10px 0;
+}
+
+.hotkey h3{
+    cursor: pointer;
+    position: relative;
+}
+
+.hotkey h3::before,
+.hotkey h3::after,
+.title h3::before,
+.title H3::after
+{
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 1px;
+    background: #000;
+    bottom: 0;
+    animation: arrow 5s 1s infinite ease-in-out ;
+}
+
+@keyframes arrow {
+        0%{
+            bottom:0;
+        }
+
+        5%{
+            bottom: -5px;
+        }
+
+        15%{
+            bottom: 0;
+        }
+
+   
+        100%{bottom: 0;}    
+}
+
+.hotkey h3:before,
+.title h3::before{
+    left: 0;
+    transform: rotateZ(4deg);
+}
+
+.hotkey h3:after,
+.title H3::after{
+    right: 0;
+    transform: rotateZ(-4deg);
 }
 
 .hotkey code{
-	font-size: 16px;
+	font-size: 13px;
+    font-weight: 600;
+}
+.hotkey p{
+    font-size: 13px;
+text-align: center;
+}
+
+.hidden{display:none}
+
+.info{
+    display: flex;
+    flex-direction: column;
+}
+
+.info p{
+    font-size: 14px;
+}
+
+.gray{
+    background: #ccc;
+    padding: 5px;
+}
+
+.lang{
+    position: relative;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+  
+}
+.lang a{
+	padding: 5px;
+	border-radius:5px;
+	}
+
+.lang a.active{	background: linear-gradient(#0057b8 50%, #ffd700 50%); font-weight: 600; cursor: none;}
+
+.lang a.activeRU{background: linear-gradient(#fff 30%, #088CE8, #fff 75% ); font-weight: 600; cursor: none;}
+
+.lang span{padding-right: 2px;}
+	
+.blue{color: blue;}
+.yellow{color:yellow}
+
+.ru{
+    text-transform: uppercase;
+}
+
+
+.manual{
+    position: relative;
+    text-align: center;
+    padding: 10px;
+}
+
+.title h3{
+    display: inline;
+    position: relative;
+    cursor: pointer;
+}
+
+.manual__codes{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 960px;
+    max-width: 100%;
+    padding: 15px 0;
+}
+
+.col{
+    width: 100%;
+    padding: 15px;
+}
+
+@media(min-width:756px){
+
+    .manual__codes{
+       flex-direction: row;
+    }
+    .col{
+        width: 33.3%;
+    }
 }
